@@ -14,9 +14,9 @@ function App(props) {
 }
 
 const mapStateToProps = state => {
-	console.log(state)
 	return {
 		menu: state.menu,
 	}
 }
+
 export default connect(mapStateToProps)(App)

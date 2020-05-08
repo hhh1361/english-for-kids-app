@@ -3,12 +3,8 @@ import { connect } from 'react-redux'
 import './Menu.css'
 
 function Menu(props) {
-	const { menu } = props
-	const { allOptions, currentOption } = menu
-	console.log('props: ', props)
-	const onChangeMenu = e => {
-		console.log(e.target.textContent)
-	}
+	const { menu, onChangeOption } = props
+	const { allOptions } = menu
 
 	return (
 		<div className="row">
@@ -22,7 +18,10 @@ function Menu(props) {
 							href="#list-home"
 							role="tab"
 							aria-controls="home"
-							onClick={onChangeMenu}
+							key={e}
+							onClick={el => {
+								onChangeOption(el.target.textContent)
+							}}
 						>
 							{e}
 						</a>
@@ -39,4 +38,13 @@ const mapStateToProps = state => {
 	}
 }
 
-export default connect(mapStateToProps)(Menu)
+const mapsDispatchToProps = dispatch => ({
+	onChangeOption: option => {
+		dispatch({
+			type: 'CHANGE_MENU_OPTION',
+			payload: option,
+		})
+	},
+})
+
+export default connect(mapStateToProps, mapsDispatchToProps)(Menu)

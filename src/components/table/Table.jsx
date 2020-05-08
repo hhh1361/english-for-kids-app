@@ -4,19 +4,22 @@ import words from '../../constants/Words'
 import Card from './card/Card'
 
 function Table(props) {
-	// const { canvas } = props
+	const { menu } = props
+	console.log(menu.currentOption)
 	return (
 		<div className="container">
 			<div className="row">
-				{words.adjective.map(e => (
-					<Card
-						word={e.word}
-						translation={e.translation}
-						image={e.image}
-						audio={e.audio}
-						key={e.word}
-					/>
-				))}
+				{menu.currentOption
+					? words[menu.currentOption].map(e => (
+							<Card
+								word={e.word}
+								translation={e.translation}
+								image={e.image}
+								audio={e.audio}
+								key={e.word}
+							/>
+					  ))
+					: null}
 			</div>
 		</div>
 	)

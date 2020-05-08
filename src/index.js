@@ -9,17 +9,29 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const initialState = {
 	menu: {
-		allOptions: ['a', 'b', 'c'],
+		allOptions: [
+			'setA',
+			'setB',
+			'setC',
+			'setD',
+			'setI',
+			'clothes',
+			'emotion',
+			'adjective',
+		],
 		currentOption: '',
 	},
 }
 
 function information(state = initialState, action) {
 	switch (action.type) {
-		case 'CHANGE_STAGE':
+		case 'CHANGE_MENU_OPTION':
 			return {
 				...state,
-				stage: action.payload,
+				menu: {
+					...state.menu,
+					currentOption: action.payload,
+				},
 			}
 		case 'ADD_EMAIL':
 			return {

@@ -4,9 +4,7 @@ import './Card.css'
 
 function Card(props) {
 	const { word, translation, image, audio } = props
-	console.log(image)
-	console.log('../../../assets/img/Adjective/big.jpg')
-	// const background = require(image)
+
 	return (
 		<div>
 			<div
