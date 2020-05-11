@@ -1,14 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Table from './components/table/Table'
-import Menu from './components/menu/Menu'
+import Header from './components/header/Header'
 import './App.css'
 
 function App(props) {
 	return (
 		<>
+			<Header />
 			<Table />
-			<Menu />
 		</>
 	)
 }

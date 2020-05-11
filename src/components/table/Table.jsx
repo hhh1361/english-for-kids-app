@@ -5,7 +5,6 @@ import Card from './card/Card'
 
 function Table(props) {
 	const { menu } = props
-	console.log(menu.currentOption)
 	return (
 		<div className="container">
 			<div className="row">
@@ -15,7 +14,7 @@ function Table(props) {
 								word={e.word}
 								translation={e.translation}
 								image={e.image}
-								audio={e.audio}
+								sound={e.audioSrc}
 								key={e.word}
 							/>
 					  ))

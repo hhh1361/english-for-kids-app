@@ -19,8 +19,9 @@ const initialState = {
 			'emotion',
 			'adjective',
 		],
-		currentOption: '',
+		currentOption: 'setA',
 	},
+	mode: 'Training',
 }
 
 function information(state = initialState, action) {
@@ -33,13 +34,10 @@ function information(state = initialState, action) {
 					currentOption: action.payload,
 				},
 			}
-		case 'ADD_EMAIL':
+		case 'CHANGE_MODE':
 			return {
 				...state,
-				information: {
-					...state.information,
-					input: { ...state.information.input, email: action.payload },
-				},
+				mode: action.payload,
 			}
 		case 'ADD_NAME':
 			return {
