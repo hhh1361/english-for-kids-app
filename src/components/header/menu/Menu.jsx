@@ -7,6 +7,7 @@ function Menu(props) {
 	const { allOptions } = menu
 
 	const menuClassname = mode === 'Play' ? 'btn-menu play' : 'btn-menu training'
+	const overlayClassname = mode === 'Play' ? 'overlay play' : 'overlay training'
 
 	const openNav = e => {
 		e.target.parentNode.children[0].classList.add('active')
@@ -20,7 +21,7 @@ function Menu(props) {
 
 	return (
 		<div className="menu">
-			<div id="myNav" className="overlay">
+			<div id="myNav" className={overlayClassname}>
 				<a href="#" className="closebtn" onClick={closeNav}>
 					&times;
 				</a>
@@ -40,7 +41,7 @@ function Menu(props) {
 				</div>
 			</div>
 			<div className={menuClassname} onClick={openNav}>
-				<span className="menuButton">Menu</span>
+				Menu
 			</div>
 		</div>
 	)

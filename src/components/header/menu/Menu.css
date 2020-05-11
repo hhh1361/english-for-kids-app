@@ -28,10 +28,18 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0, 61, 41, 0.9);
   overflow-x: hidden;
   transition: 0.5s;
+}
+
+.overlay.play {
+  background: rgb(0,0,0);
+  background: rgba(0, 99, 66, 0.9);
+}
+
+.overlay.training {
+  background: rgb(0,0,0);
+  background: rgba(117, 0, 16, 0.801);
 }
 
 div .active {
@@ -50,7 +58,7 @@ div .active {
   padding: 8px;
   text-decoration: none;
   font-size: 36px;
-  color: #818181;
+  color: white;
   display: block;
   transition: 0.3s;
 }
